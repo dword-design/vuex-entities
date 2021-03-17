@@ -1,11 +1,11 @@
 import { mapValues } from '@dword-design/functions'
-import sortObjectKeys from 'sort-object-keys'
+import sortKeys from 'sort-keys'
 
 import self from './normalize-type'
 
 const runTest = config => () =>
-  expect(config.source |> self |> sortObjectKeys |> JSON.stringify).toEqual(
-    config.result |> sortObjectKeys |> JSON.stringify
+  expect(config.source |> self |> sortKeys |> JSON.stringify).toEqual(
+    config.result |> sortKeys |> JSON.stringify
   )
 
 export default {
