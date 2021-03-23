@@ -1,4 +1,4 @@
-import { forIn, isEqual } from '@dword-design/functions'
+import { forEach, isEqual } from '@dword-design/functions'
 
 export default (change, context) => {
   const entity = context.value[change.id]
@@ -33,11 +33,11 @@ export default (change, context) => {
               })
             }
           }
-          forIn(child => {
+          forEach(context.value, child => {
             if (child.parentId === currentEntity.id) {
               rec(computedValue)(child)
             }
-          })(context.value)
+          })
         }
       }
       rec(newValue)(entity)
