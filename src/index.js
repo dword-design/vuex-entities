@@ -1,6 +1,6 @@
 import {
   flatten,
-  forIn,
+  forEach,
   groupBy,
   keys,
   map,
@@ -31,7 +31,7 @@ export default (options = {}) => store => {
       type => type.computed |> pickBy(computed => !computed.persisted) |> keys
     )
   const fireOnPersist = payload =>
-    forIn(plugin => plugin.onPersist(payload))(options.plugins)
+    forEach(options.plugins, plugin => plugin.onPersist(payload))
   store.registerModule('entities', {
     actions: {
       inject: (context, changes) => context.dispatch('update', { changes }),
@@ -46,7 +46,7 @@ export default (options = {}) => store => {
         |> Promise.all,
       update: (context, payload) => {
         const changes = [].concat(payload.changes)
-        forIn(addId)(changes)
+        forEach(changes, addId)
         const previousValueByType = payload.persisted
           ? options.types
             |> mapValues(type => context.state[type.name |> variableName].value)
@@ -71,27 +71,27 @@ export default (options = {}) => store => {
             |> values
             |> flatten
           console.log('Persisting changes:')
-          forIn(change => console.log(change))(persistedChanges)
+          forEach(persistedChanges, change => console.log(change))
           fireOnPersist({
             changes: persistedChanges,
             previousValueByType,
             valueByType: updatesByType |> mapValues('value'),
           })
         }
-        forIn((update, typeName) =>
+        forEach(updatesByType, (update, typeName) =>
           context.commit(
             `${typeName |> variableName}/set`,
             update.value |> pickBy(isAccepted(options))
           )
-        )(updatesByType)
-        forIn((update, typeName) =>
-          forIn(change =>
+        )
+        forEach(updatesByType, (update, typeName) =>
+          forEach(update.changes, change =>
             context.commit(`${typeName |> variableName}/onChange`, {
               ...change,
               ...(!(change |> isAccepted(options)) && { _deleted: true }),
             })
-          )(update.changes)
-        )(updatesByType)
+          )
+        )
       },
     },
     modules:

@@ -1,4 +1,10 @@
-import { forIn, map, mapValues, pickBy, values } from '@dword-design/functions'
+import {
+  forEach,
+  map,
+  mapValues,
+  pickBy,
+  values,
+} from '@dword-design/functions'
 
 import addComputedChanges from './add-computed-changes'
 import isAccepted from './is-accepted'
@@ -49,9 +55,9 @@ export default options => type => ({
       payload.changes.forEach(change => {
         addChange(change)
         if (change |> isAccepted(options)) {
-          forIn((property, name) =>
+          forEach(computed, (property, name) =>
             addComputedChanges(change, { addChange, name, property, value })
-          )(computed)
+          )
           type.addChanges(change, {
             addChange,
             persisted: payload.persisted,
