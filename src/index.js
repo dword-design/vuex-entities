@@ -25,11 +25,13 @@ export default (options = {}) => store => {
     options.types
     |> mapValues((type, name) => ({ name, ...type }))
     |> mapValues(normalizeType)
+
   const unpersistedPropertyNamesByType =
     options.types
     |> mapValues(
       type => type.computed |> pickBy(computed => !computed.persisted) |> keys
     )
+
   const fireOnPersist = payload =>
     forEach(options.plugins, plugin => plugin.onPersist(payload))
   store.registerModule('entities', {
@@ -47,10 +49,12 @@ export default (options = {}) => store => {
       update: (context, payload) => {
         const changes = [].concat(payload.changes)
         forEach(changes, addId)
+
         const previousValueByType = payload.persisted
           ? options.types
             |> mapValues(type => context.state[type.name |> variableName].value)
           : {}
+
         const updatesByType =
           changes
           |> groupBy('typeName')

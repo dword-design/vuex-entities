@@ -7,6 +7,7 @@ export default (change, context) => {
   }
   if (typeof context.property.calculate === 'string') {
     const parent = context.value[entity.parentId]
+
     const newValue =
       entity[context.property.calculate] || parent?.[context.name]
     if (newValue !== undefined) {

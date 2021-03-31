@@ -13,6 +13,7 @@ export default options => type => ({
   actions: {
     inject: (context, changes) => {
       changes = [].concat(changes)
+
       return context.dispatch(
         'entities/inject',
         changes |> map(change => ({ typeName: type.name, ...change })),
@@ -21,6 +22,7 @@ export default options => type => ({
     },
     put: (context, changes) => {
       changes = [].concat(changes)
+
       return context.dispatch(
         'entities/put',
         changes |> map(change => ({ typeName: type.name, ...change })),
@@ -40,7 +42,9 @@ export default options => type => ({
     get: state => state.value,
     getUpdates: (state, getters, rootState, rootGetters) => payload => {
       const changesById = {}
+
       const value = { ...state.value }
+
       const addChange = change => {
         if (change._deleted) {
           delete value[change.id]
@@ -49,6 +53,7 @@ export default options => type => ({
         }
         changesById[change.id] = { ...changesById[change.id], ...change }
       }
+
       const computed =
         type.computed
         |> pickBy(property => payload.persisted || !property.persisted)
@@ -66,6 +71,7 @@ export default options => type => ({
           })
         }
       })
+
       return {
         changes: changesById |> values,
         value,

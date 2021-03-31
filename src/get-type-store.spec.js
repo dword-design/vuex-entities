@@ -11,6 +11,7 @@ const runGetUpdatesTest = config => () => {
     ...config,
     type: config.type |> normalizeType,
   }
+
   const result = ({ name: 'Foo', ...config.type } |> self()).getters.getUpdates(
     {
       value: config.value,
