@@ -60,9 +60,10 @@ export default {
         self({
           plugins: [
             context => ({
-              init: () => context.store.dispatch('entities/inject', [
-                { id: 'foo', title: 'Foo', typeName: 'Task' },
-              ])
+              init: () =>
+                context.store.dispatch('entities/inject', [
+                  { id: 'foo', title: 'Foo', typeName: 'Task' },
+                ]),
             }),
           ],
           types: {
