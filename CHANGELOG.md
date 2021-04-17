@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/dword-design/vuex-entities/compare/v1.0.8...v1.0.9) (2021-04-17)
+
+
+### Bug Fixes
+
+* init function for plugins ([#14](https://github.com/dword-design/vuex-entities/issues/14)) ([9901630](https://github.com/dword-design/vuex-entities/commit/99016302f2fc0a0162a65c11f1ad7f7a97007277))
+
 ## [1.0.8](https://github.com/dword-design/vuex-entities/compare/v1.0.7...v1.0.8) (2021-04-12)
 
 
