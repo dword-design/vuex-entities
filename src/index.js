@@ -6,7 +6,6 @@ import {
   map,
   mapKeys,
   mapValues,
-  noop,
   omit,
   pickBy,
   stubTrue,
@@ -39,13 +38,15 @@ export default (options = {}) => store => {
       inject: (context, changes) => context.dispatch('update', { changes }),
       put: (context, changes) =>
         context.dispatch('update', { changes, persisted: true }),
-      reset: context =>
-        options.types
-        |> mapValues(type =>
-          context.dispatch(`${variableName(type.name)}/reset`)
-        )
-        |> values
-        |> Promise.all,
+      reset: async context => {
+        await (options.types
+          |> mapValues(type =>
+            context.dispatch(`${variableName(type.name)}/reset`)
+          )
+          |> values
+          |> Promise.all)
+        await (options.plugins |> map(plugin => plugin.init()) |> Promise.all)
+      },
       update: (context, payload) => {
         const changes = [].concat(payload.changes)
         forEach(changes, addId)
@@ -107,7 +108,10 @@ export default (options = {}) => store => {
   options.plugins =
     options.plugins
     |> map(plugin => ({
-      onPersist: noop,
+      init: () => {},
+      onPersist: () => {},
       ...plugin({ store, types: options.types }),
     }))
+
+  return options.plugins |> map(plugin => plugin.init()) |> Promise.all
 }
