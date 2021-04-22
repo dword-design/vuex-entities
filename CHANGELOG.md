@@ -1,3 +1,11 @@
+## [1.0.11](https://github.com/dword-design/vuex-entities/compare/v1.0.10...v1.0.11) (2021-04-22)
+
+
+### Bug Fixes
+
+* update config files ([beda1bc](https://github.com/dword-design/vuex-entities/commit/beda1bcca6bb5a298e1cb8e2768a19a33bd87a0f))
+* updated package.json[description] ([#19](https://github.com/dword-design/vuex-entities/issues/19)) ([f31f877](https://github.com/dword-design/vuex-entities/commit/f31f877b779c3be8e4e0944d3fb6c102ea5880d3))
+
 ## [1.0.10](https://github.com/dword-design/vuex-entities/compare/v1.0.9...v1.0.10) (2021-04-21)
 
 
