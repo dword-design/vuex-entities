@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/dword-design/vuex-entities/compare/v2.0.0...v2.0.1) (2021-05-03)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/functions to v4 ([#24](https://github.com/dword-design/vuex-entities/issues/24)) ([b94e718](https://github.com/dword-design/vuex-entities/commit/b94e71887f40ea648d843ec23f6bc6fe1b377979))
+
 # [2.0.0](https://github.com/dword-design/vuex-entities/compare/v1.0.12...v2.0.0) (2021-05-03)
 
 
