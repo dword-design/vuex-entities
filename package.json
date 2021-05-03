@@ -30,6 +30,9 @@
     "vue": "^2.6.12",
     "vuex": "^3.6.2"
   },
+  "engines": {
+    "node": ">=12"
+  },
   "publishConfig": {
     "access": "public"
   }
