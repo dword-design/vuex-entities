@@ -1,3 +1,19 @@
+# [2.0.0](https://github.com/dword-design/vuex-entities/compare/v1.0.12...v2.0.0) (2021-05-03)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/base to v8 ([#23](https://github.com/dword-design/vuex-entities/issues/23)) ([ac60319](https://github.com/dword-design/vuex-entities/commit/ac603199c614d9fb5e14fb6709a15bb049552fe2))
+
+
+### BREAKING CHANGES
+
+* require Node.js >= 12
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+Co-authored-by: Sebastian Landwehr <info@dword-design.de>
+Co-authored-by: GitHub Actions <actions@github.com>
+
 ## [1.0.12](https://github.com/dword-design/vuex-entities/compare/v1.0.11...v1.0.12) (2021-05-03)
 
 
