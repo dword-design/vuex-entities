@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/dword-design/vuex-entities/compare/v1.0.11...v1.0.12) (2021-05-03)
+
+
+### Bug Fixes
+
+* updated package.json[description] ([#20](https://github.com/dword-design/vuex-entities/issues/20)) ([67bb06c](https://github.com/dword-design/vuex-entities/commit/67bb06c475a2d18c15b81c28588847974b178b39))
+
 ## [1.0.11](https://github.com/dword-design/vuex-entities/compare/v1.0.10...v1.0.11) (2021-04-22)
 
 
