@@ -57,7 +57,7 @@ export default options => type => ({
       const computed =
         type.computed
         |> pickBy(property => payload.persisted || !property.persisted)
-      payload.changes.forEach(change => {
+      for (const change of payload.changes) {
         addChange(change)
         if (change |> isAccepted(options)) {
           forEach(computed, (property, name) =>
