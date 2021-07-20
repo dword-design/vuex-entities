@@ -1,3 +1,12 @@
+## [2.0.5](https://github.com/dword-design/vuex-entities/compare/v2.0.4...v2.0.5) (2021-07-20)
+
+
+### Bug Fixes
+
+* fix syntax ([102cbeb](https://github.com/dword-design/vuex-entities/commit/102cbebeceed906216ea04c809bd5bf5993ff646))
+* replace forEach with for of ([ecf9aa0](https://github.com/dword-design/vuex-entities/commit/ecf9aa0644ea982fcde562620e71202fdf466449))
+* update config files ([690609b](https://github.com/dword-design/vuex-entities/commit/690609bc648eed7e3693e1c773e1f70456dc6c22))
+
 ## [2.0.4](https://github.com/dword-design/vuex-entities/compare/v2.0.3...v2.0.4) (2021-07-06)
 
 
