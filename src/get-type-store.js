@@ -70,7 +70,7 @@ export default options => type => ({
             value,
           })
         }
-      })
+      }
 
       return {
         changes: changesById |> values,
