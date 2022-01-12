@@ -1,3 +1,10 @@
+## [2.0.7](https://github.com/dword-design/vuex-entities/compare/v2.0.6...v2.0.7) (2022-01-12)
+
+
+### Bug Fixes
+
+* update config files ([06f5c66](https://github.com/dword-design/vuex-entities/commit/06f5c665997be38c86b2638c676459d2cb1aaab6))
+
 ## [2.0.6](https://github.com/dword-design/vuex-entities/compare/v2.0.5...v2.0.6) (2022-01-04)
 
 
