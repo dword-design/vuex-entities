@@ -1,3 +1,10 @@
+## [2.0.9](https://github.com/dword-design/vuex-entities/compare/v2.0.8...v2.0.9) (2023-03-25)
+
+
+### Bug Fixes
+
+* update dependency vue to v2.7.14 ([8a0c7d4](https://github.com/dword-design/vuex-entities/commit/8a0c7d425778eb8943e99a9af5a3686e3eb77589))
+
 ## [2.0.8](https://github.com/dword-design/vuex-entities/compare/v2.0.7...v2.0.8) (2023-03-24)
 
 
