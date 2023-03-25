@@ -21,7 +21,7 @@
   "dependencies": {
     "@dword-design/functions": "^4.0.0",
     "lower-case-first": "^2.0.1",
-    "uuid": "^8.2.0"
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@dword-design/base": "^8.0.0",
